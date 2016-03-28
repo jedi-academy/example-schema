@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+
+<xs:element name="books">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element name="book" type="booktype" maxOccurs="99"/>
+      </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+<xs:complexType name="booktype" mixed="true">
+  <xs:sequence> 
+    <xs:element name="title" type="xs:string"/>
+    <xs:element name="translation" type="talktype" maxOccurs="99"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="talktype" mixed="true">
+  <xs:attribute name="edition"
+                   type="xs:positiveInteger"/>
+</xs:complexType>
+
+</xs:schema>

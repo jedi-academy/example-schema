@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Schema to constrain vehicle sales by element.
+    This XML document is more element-centric than attribute centric.
+    Curiously (or not), we can share the same type definitions as the earlier
+    schemas, but they will apply to elements rather than attributes.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- Let's define our base types -->
+
+    <!-- A year is a 4-digit integer. 
+    We could restrict it to an enumerated list of allowed values, or
+    we could define a minimum and maximum range, or
+    we could describe it using a regular expression. 
+    Let's do the latter, and limit it to 2000-2020 :) -->
+    <xs:simpleType name="Tyear">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{4}"/>
+            <xs:minInclusive value="2000"/>
+            <xs:maxInclusive value="2020"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- There are three countries in our data set.
+    It makes sense to restrict a country type to one
+    of that list. We can add to the list later if North America grows. 
+    Note that we will have to capitalize these later for reporting. -->
+    <xs:simpleType name="Tcountry">
+        <xs:restriction base="xs:string">    
+            <xs:enumeration value="canada"/>
+            <xs:enumeration value="mexico"/>
+            <xs:enumeration value="usa"/>
+        </xs:restriction>    
+    </xs:simpleType>
+    
+    <!-- The data set covers three types of vehicles.
+    We can use codes for these, and translate them later
+    into more descriptive text for reporting purposes. -->
+    <xs:simpleType name="Tvehicle">
+        <xs:restriction base="xs:string">    
+            <xs:enumeration value="car"/>
+            <xs:enumeration value="light"/>
+            <xs:enumeration value="heavy"/>
+        </xs:restriction>    
+    </xs:simpleType>
+
+    <!-- Finaly, a quarter is an interger in the range 1 to 4. -->
+    <xs:simpleType name="Tquarter">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+<!-- Now we can define the structure of our XML. -->
+
+    <!-- The root element is *sales*, for a specific year,
+    and it should hold multiple *source* elements, one per country. 
+    Note that it starts with a *year* element instead of attribute. -->
+    <xs:element name="sales">        
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="year" type="Tyear"/>
+                <xs:element ref="source" maxOccurs="unbounded"/>        
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Each *source* element contains multiple *vehicles* elements,
+    one for each type sold in that country. 
+    Oh yeah, we identify the country that this *source* element
+    pertains to its *country* element instead of attribute,
+    and we want this before any other elements. -->
+    <xs:element name="source">        
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="country" type="Tcountry"/>
+                <xs:element ref="vehicles" maxOccurs="unbounded"/>        
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Each *vehicles* element contains multiple *sold* elements,
+    one for quarter that this type of vehicle had sales.
+    Identify the type of vehicle through a *type* element -->
+    <xs:element name="vehicles">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="type" type="Tvehicle"/>
+                <xs:element ref="sold" maxOccurs="4"/>        
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Each *sold* element contains the vehicel sales, for
+    a specific vehicle type, in a specific country, in a specific quarter.
+    Identify the relevant quarter through a *quarter* attribute -->
+    <xs:element name="sold">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:integer">
+                    <xs:attribute name="quarter" type="Tquarter"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

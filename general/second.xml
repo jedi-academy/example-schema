@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="second.xsd">
+
+    <person name="Jim" best-friend="Duncan"/>
+    <person name="George" best-friend="Jim"/>
+    <person name="Henry" best-friend="George"/>
+    <person name="Duncan" best-friend="Jim"/>
+    <person name="Tom"/>
+</Root>

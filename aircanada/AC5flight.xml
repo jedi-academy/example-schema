@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="AC5flight.xsd">
+  <flight num="7" from="TTZ" to="YVR" distance="2081">
+    <instance leave="0800" arrive="0959" type="77W" freq="Daily"/>
+  </flight>
+  <flight num="8" from="YVR" to="TTZ" distance="2081">
+    <instance leave="1620" arrive="2339" type="77W" freq="Daily"/>
+  </flight>
+  <flight num="33" from="TTZ" to="YVR" distance="2081">
+    <instance leave="2015" arrive="2214" type="77L" freq="Daily"/>
+  </flight>
+  <flight num="34" from="YVR" to="TTZ" distance="2081">
+    <instance leave="0900" arrive="1619" type="77L" freq="Daily"/>
+  </flight>
+  <flight num="63" from="TTZ" to="YVR" distance="2081">
+    <instance leave="0830" arrive="1037" type="763" freq="Daily"/>
+  </flight>
+  <flight num="64" from="YVR" to="TTZ" distance="2081">
+    <instance leave="1330" arrive="2055" type="763" freq="Daily"/>
+  </flight>
+  <flight num="101" from="TTZ" to="YVR" distance="2081">
+    <instance leave="1200" arrive="1407" type="321" freq="Daily"/>
+  </flight>
+  <flight num="103" from="TTZ" to="YVR" distance="2081">
+    <instance leave="0700" arrive="0907" type="321" freq="Daily"/>
+  </flight>
+  <flight num="107" from="TTZ" to="YYC" distance="1673">
+    <instance leave="0700" arrive="0912" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="108" from="YVR" to="TTZ" distance="2081">
+    <instance leave="0700" arrive="1420" type="319" freq="Daily"/>
+  </flight>
+  <flight num="109" from="TTZ" to="YVR" distance="2081">
+    <instance leave="1400" arrive="1607" type="321" freq="Daily"/>
+  </flight>
+  <flight num="110" from="YYC" to="TTZ" distance="1673">
+    <instance leave="1000" arrive="1540" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="115" from="TTZ" to="YVR" distance="2081">
+    <instance leave="1700" arrive="1907" type="763" freq="X6"/>
+  </flight>
+  <flight num="116" from="YVR" to="TTZ" distance="2081">
+    <instance leave="1000" arrive="1725" type="763" freq="Daily"/>
+  </flight>
+  <flight num="117" from="TTZ" to="YYC" distance="1673">
+    <instance leave="0800" arrive="1012" type="321" freq="Daily"/>
+  </flight>
+  <flight num="119" from="TTZ" to="YYC" distance="1673">
+    <instance leave="1000" arrive="1212" type="321" freq="Daily"/>
+  </flight>
+  <flight num="121" from="TTZ" to="YYC" distance="1673">
+    <instance leave="1400" arrive="1612" type="321" freq="X7"/>
+    <instance leave="1410" arrive="1622" type="E90" freq="7"/>
+  </flight>
+  <flight num="122" from="YYC" to="TTZ" distance="1673">
+    <instance leave="0800" arrive="1340" type="320" freq="Daily"/>
+  </flight>
+  <flight num="125" from="TTZ" to="YYC" distance="1673">
+    <instance leave="1600" arrive="1812" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="128" from="YYC" to="TTZ" distance="1673">
+    <instance leave="1315" arrive="1855" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="130" from="YYC" to="TTZ" distance="1673">
+    <instance leave="1515" arrive="2055" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="132" from="YVR" to="TTZ" distance="2081">
+    <instance leave="1230" arrive="1955" type="321" freq="Daily"/>
+  </flight>
+  <flight num="133" from="TTZ" to="YYC" distance="1673">
+    <instance leave="1830" arrive="2042" type="321" freq="Daily"/>
+  </flight>
+  <flight num="134" from="YYC" to="TTZ" distance="1673">
+    <instance leave="1815" arrive="2355" type="319" freq="Daily"/>
+  </flight>
+  <flight num="137" from="TTZ" to="YVR" distance="2081">
+    <instance leave="1800" arrive="2004" type="333" freq="Daily" notes="Above flight Exc. 1/19, 1/26"/>
+    <instance leave="1800" arrive="2007" type="763" freq="3" notes="Above flight Disc. 1/26"/>
+  </flight>
+  <flight num="140" from="YYC" to="TTZ" distance="1673">
+    <instance leave="1615" arrive="2155" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="141" from="TTZ" to="YYC" distance="1673">
+    <instance leave="2250" arrive="0102" nextday="y" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="142" from="YVR" to="TTZ" distance="2081">
+    <instance leave="0800" arrive="1525" type="333" freq="Daily"/>
+  </flight>
+  <flight num="145" from="TTZ" to="YYC" distance="1673">
+    <instance leave="2030" arrive="2242" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="146" from="YYC" to="TTZ" distance="1673">
+    <instance leave="0010" arrive="0550" type="319" freq="Daily"/>
+  </flight>
+  <flight num="148" from="YVR" to="TTZ" distance="2081">
+    <instance leave="1430" arrive="2155" type="321" freq="X6"/>
+    <instance leave="1500" arrive="2225" type="320" freq="6"/>
+  </flight>
+  <flight num="151" from="TTZ" to="YVR" distance="2081">
+    <instance leave="2250" arrive="0057" nextday="y" type="320" freq="Daily"/>
+  </flight>
+  <flight num="156" from="YVR" to="TTZ" distance="2081">
+    <instance leave="2230" arrive="0555" nextday="y" type="321" freq="Daily"/>
+  </flight>
+  <flight num="161" from="TTZ" to="YVR" distance="2081">
+    <instance leave="1600" arrive="1807" type="763" freq="Daily"/>
+  </flight>
+  <flight num="162" from="YVR" to="TTZ" distance="2081">
+    <instance leave="2330" arrive="0655" nextday="y" type="321" freq="Daily" notes="Above flight Disc. 2/11"/>
+    <instance leave="2330" arrive="0655" nextday="y" type="321" freq="X56" notes="Above flight 2/13 - 2/17"/>
+    <instance leave="2330" arrive="0655" nextday="y" type="321" freq="X6" notes="Above flight Eff. 2/21"/>
+  </flight>
+  <flight num="164" from="YYC" to="TTZ" distance="1673">
+    <instance leave="1115" arrive="1655" type="321" freq="Daily"/>
+  </flight>
+  <flight num="173" from="TTZ" to="YYC" distance="1673">
+    <instance leave="1200" arrive="1412" type="320" freq="Daily"/>
+  </flight>
+  <flight num="174" from="YYC" to="TTZ" distance="1673">
+    <instance leave="0700" arrive="1240" type="320" freq="Daily"/>
+  </flight>
+  <flight num="180" from="YVR" to="TTZ" distance="2081">
+    <instance leave="1130" arrive="1855" type="321" freq="Daily"/>
+  </flight>
+  <flight num="181" from="TTZ" to="YVR" distance="2081">
+    <instance leave="1000" arrive="1207" type="319" freq="Daily"/>
+  </flight>
+  <flight num="202" from="YVR" to="YYC" distance="427">
+    <instance leave="0700" arrive="0919" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="203" from="YYC" to="YVR" distance="427">
+    <instance leave="0700" arrive="0728" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="204" from="YVR" to="YYC" distance="427">
+    <instance leave="0800" arrive="1019" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="205" from="YYC" to="YVR" distance="427">
+    <instance leave="0810" arrive="0838" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="206" from="YVR" to="YYC" distance="427">
+    <instance leave="0900" arrive="1119" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="207" from="YYC" to="YVR" distance="427">
+    <instance leave="0910" arrive="0938" type="320" freq="Daily"/>
+  </flight>
+  <flight num="208" from="YVR" to="YYC" distance="427">
+    <instance leave="1000" arrive="1219" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="210" from="YVR" to="YYC" distance="427">
+    <instance leave="1100" arrive="1319" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="211" from="YYC" to="YVR" distance="427">
+    <instance leave="1110" arrive="1138" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="212" from="YVR" to="YYC" distance="427">
+    <instance leave="1200" arrive="1419" type="E90" freq="X7"/>
+    <instance leave="1230" arrive="1449" type="320" freq="7"/>
+  </flight>
+  <flight num="213" from="YYC" to="YVR" distance="427">
+    <instance leave="1210" arrive="1238" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="215" from="YYC" to="YVR" distance="427">
+    <instance leave="1310" arrive="1338" type="321" freq="Daily"/>
+  </flight>
+  <flight num="216" from="YVR" to="YYC" distance="427">
+    <instance leave="1400" arrive="1619" type="319" freq="Daily"/>
+  </flight>
+  <flight num="217" from="YYC" to="YVR" distance="427">
+    <instance leave="1410" arrive="1438" type="E90" freq="X7"/>
+  </flight>
+  <flight num="218" from="YVR" to="YYC" distance="427">
+    <instance leave="1500" arrive="1719" type="319" freq="Daily"/>
+  </flight>
+  <flight num="219" from="YYC" to="YVR" distance="427">
+    <instance leave="1510" arrive="1538" type="320" freq="Daily"/>
+  </flight>
+  <flight num="220" from="YVR" to="YYC" distance="427">
+    <instance leave="1600" arrive="1819" type="E90" freq="X67"/>
+    <instance leave="1610" arrive="1829" type="E90" freq="67"/>
+  </flight>
+  <flight num="221" from="YYC" to="YVR" distance="427">
+    <instance leave="1610" arrive="1638" type="E90" freq="X6"/>
+  </flight>
+  <flight num="222" from="YVR" to="YYC" distance="427">
+    <instance leave="1730" arrive="1949" type="E90" freq="X6"/>
+  </flight>
+  <flight num="223" from="YYC" to="YVR" distance="427">
+    <instance leave="1710" arrive="1738" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="224" from="YVR" to="YYC" distance="427">
+    <instance leave="1830" arrive="2049" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="225" from="YYC" to="YVR" distance="427">
+    <instance leave="1810" arrive="1838" type="E90" freq="X7"/>
+  </flight>
+  <flight num="226" from="YVR" to="YYC" distance="427">
+    <instance leave="1945" arrive="2204" type="E90" freq="X67"/>
+  </flight>
+  <flight num="227" from="YYC" to="YVR" distance="427">
+    <instance leave="1910" arrive="1938" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="228" from="YVR" to="YYC" distance="427">
+    <instance leave="2045" arrive="2304" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="229" from="YYC" to="YVR" distance="427">
+    <instance leave="2110" arrive="2138" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="230" from="YVR" to="YYC" distance="427">
+    <instance leave="2230" arrive="0049" nextday="y" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="231" from="YYC" to="YVR" distance="427">
+    <instance leave="2255" arrive="2323" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="235" from="YYC" to="YVR" distance="427">
+    <instance leave="2030" arrive="2058" type="E90" freq="7"/>
+  </flight>
+  <flight num="252" from="YVR" to="YYC" distance="427">
+    <instance leave="1630" arrive="1849" type="E90" freq="5" notes="Above flight Eff. 2/11"/>
+  </flight>
+  <flight num="1146" from="YVR" to="YYC" distance="427">
+    <instance leave="1300" arrive="1519" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="1147" from="YYC" to="YVR" distance="427">
+    <instance leave="1010" arrive="1038" type="E90" freq="Daily"/>
+  </flight>
+  <flight num="1165" from="TTZ" to="YYC" distance="1673">
+    <instance leave="1730" arrive="1942" type="E90" freq="7"/>
+  </flight>
+</schedule>

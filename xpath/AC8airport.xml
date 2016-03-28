@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="AC8airport.xsl"?>
+<schedule airline="AC">
+  <origin code="TTZ" city="Toronto, ON">
+    <destination code="YVR" city="Vancouver, BC" distance="2081">
+      <flight leave="0700" arrive="0907" num="103" type="321" freq="Daily"/>
+      <flight leave="0800" arrive="0959" num="7" type="77W" freq="Daily"/>
+      <flight leave="0830" arrive="1037" num="63" type="763" freq="Daily"/>
+      <flight leave="1000" arrive="1207" num="181" type="319" freq="Daily"/>
+      <flight leave="1200" arrive="1407" num="101" type="321" freq="Daily"/>
+      <flight leave="1400" arrive="1607" num="109" type="321" freq="Daily"/>
+      <flight leave="1600" arrive="1807" num="161" type="763" freq="Daily"/>
+      <flight leave="1700" arrive="1907" num="115" type="763" freq="X6"/>
+      <flight leave="1800" arrive="2004" num="137" type="333" freq="Daily" notes="Above flight Exc. 1/19, 1/26"/>
+      <flight leave="1800" arrive="2007" num="137" type="763" freq="3" notes="Above flight Disc. 1/26"/>
+      <flight leave="2015" arrive="2214" num="33" type="77L" freq="Daily"/>
+      <flight leave="2250" arrive="0057" nextday="y" num="151" type="320" freq="Daily"/>
+    </destination>
+    <destination code="YYC" city="Calgary, AB" distance="1673">
+      <flight leave="0700" arrive="0912" num="107" type="E90" freq="Daily"/>
+      <flight leave="0800" arrive="1012" num="117" type="321" freq="Daily"/>
+      <flight leave="1000" arrive="1212" num="119" type="321" freq="Daily"/>
+      <flight leave="1200" arrive="1412" num="173" type="320" freq="Daily"/>
+      <flight leave="1400" arrive="1612" num="121" type="321" freq="X7"/>
+      <flight leave="1410" arrive="1622" num="121" type="E90" freq="7"/>
+      <flight leave="1600" arrive="1812" num="125" type="E90" freq="Daily"/>
+      <flight leave="1730" arrive="1942" num="1165" type="E90" freq="7"/>
+      <flight leave="1830" arrive="2042" num="133" type="321" freq="Daily"/>
+      <flight leave="2030" arrive="2242" num="145" type="E90" freq="Daily"/>
+      <flight leave="2250" arrive="0102" nextday="y" num="141" type="E90" freq="Daily"/>
+    </destination>
+  </origin>
+  <origin code="YVR" city="Vancouver, BC">
+    <destination code="TTZ" city="Toronto, ON" distance="2081">
+      <flight leave="0700" arrive="1420" num="108" type="319" freq="Daily"/>
+      <flight leave="0800" arrive="1525" num="142" type="333" freq="Daily"/>
+      <flight leave="0900" arrive="1619" num="34" type="77L" freq="Daily"/>
+      <flight leave="1000" arrive="1725" num="116" type="763" freq="Daily"/>
+      <flight leave="1130" arrive="1855" num="180" type="321" freq="Daily"/>
+      <flight leave="1230" arrive="1955" num="132" type="321" freq="Daily"/>
+      <flight leave="1330" arrive="2055" num="64" type="763" freq="Daily"/>
+      <flight leave="1430" arrive="2155" num="148" type="321" freq="X6"/>
+      <flight leave="1500" arrive="2225" num="148" type="320" freq="6"/>
+      <flight leave="1620" arrive="2339" num="8" type="77W" freq="Daily"/>
+      <flight leave="2230" arrive="0555" nextday="y" num="156" type="321" freq="Daily"/>
+      <flight leave="2330" arrive="0655" nextday="y" num="162" type="321" freq="Daily" notes="Above flight Disc. 2/11"/>
+      <flight leave="2330" arrive="0655" nextday="y" num="162" type="321" freq="X56" notes="Above flight 2/13 - 2/17"/>
+      <flight leave="2330" arrive="0655" nextday="y" num="162" type="321" freq="X6" notes="Above flight Eff. 2/21"/>
+    </destination>
+    <destination code="YYC" city="Calgary, AB" distance="427">
+      <flight leave="0700" arrive="0919" num="202" type="E90" freq="Daily"/>
+      <flight leave="0800" arrive="1019" num="204" type="E90" freq="Daily"/>
+      <flight leave="0900" arrive="1119" num="206" type="E90" freq="Daily"/>
+      <flight leave="1000" arrive="1219" num="208" type="E90" freq="Daily"/>
+      <flight leave="1100" arrive="1319" num="210" type="E90" freq="Daily"/>
+      <flight leave="1200" arrive="1419" num="212" type="E90" freq="X7"/>
+      <flight leave="1230" arrive="1449" num="212" type="320" freq="7"/>
+      <flight leave="1300" arrive="1519" num="1146" type="E90" freq="Daily"/>
+      <flight leave="1400" arrive="1619" num="216" type="319" freq="Daily"/>
+      <flight leave="1500" arrive="1719" num="218" type="319" freq="Daily"/>
+      <flight leave="1600" arrive="1819" num="220" type="E90" freq="X67"/>
+      <flight leave="1610" arrive="1829" num="220" type="E90" freq="67"/>
+      <flight leave="1630" arrive="1849" num="252" type="E90" freq="5" notes="Above flight Eff. 2/11"/>
+      <flight leave="1730" arrive="1949" num="222" type="E90" freq="X6"/>
+      <flight leave="1830" arrive="2049" num="224" type="E90" freq="Daily"/>
+      <flight leave="1945" arrive="2204" num="226" type="E90" freq="X67"/>
+      <flight leave="2045" arrive="2304" num="228" type="E90" freq="Daily"/>
+      <flight leave="2230" arrive="0049" nextday="y" num="230" type="E90" freq="Daily"/>
+    </destination>
+  </origin>
+  <origin code="YYC" city="Calgary, AB">
+    <destination code="TTZ" city="Toronto, ON" distance="1673">
+      <flight leave="0010" arrive="0550" num="146" type="319" freq="Daily"/>
+      <flight leave="0700" arrive="1240" num="174" type="320" freq="Daily"/>
+      <flight leave="0800" arrive="1340" num="122" type="320" freq="Daily"/>
+      <flight leave="1000" arrive="1540" num="110" type="E90" freq="Daily"/>
+      <flight leave="1115" arrive="1655" num="164" type="321" freq="Daily"/>
+      <flight leave="1315" arrive="1855" num="128" type="E90" freq="Daily"/>
+      <flight leave="1515" arrive="2055" num="130" type="E90" freq="Daily"/>
+      <flight leave="1615" arrive="2155" num="140" type="E90" freq="Daily"/>
+      <flight leave="1815" arrive="2355" num="134" type="319" freq="Daily"/>
+    </destination>
+    <destination code="YVR" city="Vancouver, BC"  distance="427">
+      <flight leave="0700" arrive="0728" num="203" type="E90" freq="Daily"/>
+      <flight leave="0810" arrive="0838" num="205" type="E90" freq="Daily"/>
+      <flight leave="0910" arrive="0938" num="207" type="320" freq="Daily"/>
+      <flight leave="1010" arrive="1038" num="1147" type="E90" freq="Daily"/>
+      <flight leave="1110" arrive="1138" num="211" type="E90" freq="Daily"/>
+      <flight leave="1210" arrive="1238" num="213" type="E90" freq="Daily"/>
+      <flight leave="1310" arrive="1338" num="215" type="321" freq="Daily"/>
+      <flight leave="1410" arrive="1438" num="217" type="E90" freq="X7"/>
+      <flight leave="1510" arrive="1538" num="219" type="320" freq="Daily"/>
+      <flight leave="1610" arrive="1638" num="221" type="E90" freq="X6"/>
+      <flight leave="1710" arrive="1738" num="223" type="E90" freq="Daily"/>
+      <flight leave="1810" arrive="1838" num="225" type="E90" freq="X7"/>
+      <flight leave="1910" arrive="1938" num="227" type="E90" freq="Daily"/>
+      <flight leave="2030" arrive="2058" num="235" type="E90" freq="7"/>
+      <flight leave="2110" arrive="2138" num="229" type="E90" freq="Daily"/>
+      <flight leave="2255" arrive="2323" num="231" type="E90" freq="Daily"/>
+    </destination>
+  </origin>
+</schedule>

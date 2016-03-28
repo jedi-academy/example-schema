@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- Our root element, schedule, contains route & effective nested elements,
+the port and day definition tables, and then any number of sailing elements -->
+    <xs:element name="schedule">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="route" type="xs:string"/>
+                <xs:element name="effective" type="xs:string"/>
+                <xs:element name="ports" type="portsType"/>
+                <xs:element name="days" type="daysType"/>
+                <xs:element name="sailing" type="sailingType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- This is our ports table, a list of allowed port codes -->
+    <xs:complexType name="portsType">
+        <xs:sequence>
+            <xs:element name="port" type="portType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Model for a port -->
+    <xs:complexType name="portType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="code" type="portCodeType"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Model for a port code -->
+    <xs:simpleType name="portCodeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LH"/>
+            <xs:enumeration value="SB"/>
+            <xs:enumeration value="OB"/>
+            <xs:enumeration value="VB"/>
+            <xs:enumeration value="TS"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- This is our days table, a list of allowed day codes -->
+    <xs:complexType name="daysType">
+        <xs:sequence>
+            <xs:element name="day" type="dayType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Model for a port -->
+    <xs:complexType name="dayType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="code" type="dayCodeType"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- Model for a port code -->
+    <xs:simpleType name="dayCodeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="M"/>
+            <xs:enumeration value="T"/>
+            <xs:enumeration value="W"/>
+            <xs:enumeration value="R"/>
+            <xs:enumeration value="F"/>
+            <xs:enumeration value="S"/>
+            <xs:enumeration value="U"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+<!-- Finally, the meat of our schema: a sailing -->
+    <xs:complexType name="sailingType">
+        <xs:sequence>
+            <xs:element name="stop" type="stopType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="origin" type="portCodeType"/>
+        <xs:attribute name="destination" type="portCodeType"/>
+        <xs:attribute name="days" type="multipleDaysType"/>
+        <xs:attribute name="depart" type="ferryTimeType"/>
+        <xs:attribute name="arrive" type="ferryTimeType"/>
+    </xs:complexType>
+
+    <!-- allow multiple days at a time -->
+    <xs:simpleType name="multipleDaysType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([MTWRFSU])*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- 24 hour time used by BC Ferries -->
+    <xs:simpleType name="ferryTimeType">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[0-9][0-9][0-9][0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- A stop along the way -->
+    <xs:complexType name="stopType">
+        <xs:attribute name="port" type="portCodeType"/>
+        <xs:attribute name="arrive" type="ferryTimeType"/>
+        <xs:attribute name="depart" type="ferryTimeType"/>
+    </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Sample solution for COMP4711 Lab 4, Fall 2010.
+This XML document is the same as that for Lab 3, except that it is bound to a
+schema for validation, not to a DTD.
+
+This solution explicitly uses the same structure as the previous XML
+documents - there is a separate version which has been enhanced to use
+the port and day codes.
+
+All times use the 24 hour clock.
+Ports and days of the week have been assigned codes, to keep the schedule clean.
+
+...............................................................................
+This XML document models the BC Ferries Southern Gulf Islands route,
+between Long Harbour (Salt Spring) and Tsawwassen (Mainland).
+
+The ferry basically makes two return trips a day:
+In the morning, it travels from Long Harbour to the mainland, stopping at the
+islands in between. In the late morning and midday, it returns to Long Harbour,
+again stopping at the islands on the way.
+In the afternoon, it repeats this: Long Harbour to Tsawassen then return, stopping
+at the islands along the way.
+
+Some of the weekend trips are non-stop.
+
+On fridays, the afternoon sailing is a bit more circuitous, going from Long Harbour
+to Tsawassen, making the rounds of the islands and returning to Tsawwassen, then finally
+returning to Long Harbour non-stop.
+
+This document does not attempt to handle long weekends, where additional sailings
+may be scheduled, nor the shoulder season, when sailings heppen at different times.
+...............................................................................
+
+This is not the only possible solution!
+-->
+<schedule
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="FerryScheduleComp4711Lab4.xsd">
+    <route>Southern Gulf Islands to Mainland</route>
+    <effective>Oct 15, 2010 through Dec 15, 2010</effective>
+
+    <!-- Definitions for ports & days of the week, for reference and future use -->
+    <ports>
+        <port code="LH">Long Harbour (Salt Spring)</port>
+        <port code="SB">Sturdies Bay (Galiano)</port>
+        <port code="OB">Otter Bay (Pender)</port>
+        <port code="VB">Village Bay (Mayne)</port>
+        <port code="TS">Tsawwassen (Mainland)</port>
+    </ports>
+    <days>
+        <day code="M">Monday</day>
+        <day code="T">Tuesday</day>
+        <day code="W">Wednesday</day>
+        <day code="R">Thursday</day>
+        <day code="F">Friday</day>
+        <day code="S">Saturday</day>
+        <day code="U">Sunday</day>
+    </days>
+
+    <!-- Here are the morning eastbound sailings -->
+    <sailing origin="LH" destination="TS" days="MTWRF" depart="0615" arrive="0920">
+        <stop port="OB" arrive="0655" depart="0705"/>
+        <stop port="VB" arrive="0730" depart="0745"/>
+        <stop port="SB" arrive="0815" depart="0825"/>
+    </sailing>
+    <sailing origin="LH" destination="TS" days="S" depart="0630" arrive="0755">
+    </sailing>
+    <sailing origin="LH" destination="TS" days="U" depart="0715" arrive="1020">
+        <stop port="OB" arrive="0755" depart="0805"/>
+        <stop port="VB" arrive="0830" depart="0840"/>
+        <stop port="SB" arrive="0915" depart="0925"/>
+    </sailing>
+
+    <!-- and the afternoon eastbound sailings -->
+    <sailing origin="LH" destination="TS" days="MTWR" depart="1515" arrive="1835">
+        <stop port="OB" arrive="1555" depart="1605"/>
+        <stop port="VB" arrive="1630" depart="1645"/>
+        <stop port="SB" arrive="1725" depart="1735"/>
+    </sailing>
+    <sailing origin="LH" destination="TS" days="F" depart="1625" arrive="1750">
+    </sailing>
+    <sailing origin="LH" destination="TS" days="S" depart="1535" arrive="1835">
+        <stop port="OB" arrive="1615" depart="1625"/>
+        <stop port="VB" arrive="1650" depart="1705"/>
+        <stop port="SB" arrive="1725" depart="1740"/>
+    </sailing>
+    <sailing origin="LH" destination="TS" days="U" depart="1530" arrive="1800">
+        <stop port="VB" arrive="1605" depart="1605"/>
+        <stop port="SB" arrive="1650" depart="1705"/>
+    </sailing>
+
+    <!-- Here are the midday westbound sailings -->
+    <sailing origin="TS" destination="LH" days="MTWRF" depart="1010" arrive="1310">
+        <stop port="SB" arrive="1105" depart="1115"/>
+        <stop port="VB" arrive="1145" depart="1155"/>
+        <stop port="OB" arrive="1220" depart="1230"/>
+    </sailing>
+    <sailing origin="TS" destination="LH" days="S" depart="1215" arrive="1340">
+    </sailing>
+    <sailing origin="TS" destination="LH" days="U" depart="1110" arrive="1410">
+        <stop port="SB" arrive="1205" depart="1215"/>
+        <stop port="VB" arrive="1245" depart="1255"/>
+        <stop port="OB" arrive="1320" depart="1330"/>
+    </sailing>
+
+    <!-- And the evening westbound sailings -->
+    <sailing origin="TS" destination="LH" days="MTWR" depart="1920" arrive="2220">
+        <stop port="SB" arrive="2015" depart="2025"/>
+        <stop port="VB" arrive="2055" depart="2105"/>
+        <stop port="OB" arrive="2130" depart="2140"/>
+    </sailing>
+    <sailing origin="TS" destination="TS" days="F" depart="1830" arrive="2200">
+        <stop port="SB" arrive="1920" depart="1930"/>
+        <stop port="VB" arrive="2000" depart="2010"/>
+        <stop port="OB" arrive="2035" depart="2040"/>
+    </sailing>
+    <sailing origin="TS" destination="LH" days="F" depart="2225" arrive="2350">
+    </sailing>
+    <sailing origin="TS" destination="LH" days="S" depart="2045" arrive="2300">
+        <stop port="SB" arrive="2120" depart="2150"/>
+        <stop port="VB" arrive="2215" depart="2220"/>
+    </sailing>
+    <sailing origin="TS" destination="LH" days="U" depart="2135" arrive="2350">
+    </sailing>
+    
+
+</schedule>

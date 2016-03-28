@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Schema to constrain vehicle sales by quarter.
+    This schema is going to be very similar to the one by source, apart
+    from the element and attribute names, and the element nesting.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- Let's define our attributes -->
+
+    <!-- A year is a 4-digit integer. 
+    We could restrict it to an enumerated list of allowed values, or
+    we could define a minimum and maximum range, or
+    we could describe it using a regular expression. 
+    Let's do the latter, and limit it to 2000-2020 :) -->
+    <xs:simpleType name="Tyear">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{4}"/>
+            <xs:minInclusive value="2000"/>
+            <xs:maxInclusive value="2020"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- There are three countries in our data set.
+    It makes sense to restrict a country type to one
+    of that list. We can add to the list later if North America grows. 
+    Note that this XML has the country names capitalized already. -->
+    <xs:simpleType name="Tcountry">
+        <xs:restriction base="xs:string">    
+            <xs:enumeration value="Canada"/>
+            <xs:enumeration value="Mexico"/>
+            <xs:enumeration value="U.S."/>
+        </xs:restriction>    
+    </xs:simpleType>
+    
+    <!-- The data set covers three types of vehicles.  -->
+    <xs:simpleType name="Tvehicle">
+        <xs:restriction base="xs:string">    
+            <xs:enumeration value="Car"/>
+            <xs:enumeration value="Light Truck"/>
+            <xs:enumeration value="Med/Hvy. Truck"/>
+        </xs:restriction>    
+    </xs:simpleType>
+
+    <!-- Finaly, a quarter is an interger in the range 1 to 4. -->
+    <xs:simpleType name="Tquarter">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+<!-- Now we can define the structure of our XML.
+This could be done from the top-down, like a DTD,
+or from the bottom-up, like programming. 
+For this schema, let's work from the top down. -->
+
+    <!-- The root element is *sale*, which contains a
+    bunch of *quarter* elements addressing quarterly
+    vehicle sales over an indeterminate period. -->
+    <xs:element name="sale">        
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="quarter" maxOccurs="unbounded"/>        
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Each *quarter* element contains multiple *country* elements,
+    one for each country in the North America region. 
+    The quarter's pertinent period is indicated by the *year*
+    and quarter *number* attributes. -->
+    <xs:element name="quarter">        
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="country" maxOccurs="unbounded"/>        
+            </xs:sequence>
+            <xs:attribute name="year" type="Tyear"/>
+            <xs:attribute name="number" type="Tquarter"/>
+        </xs:complexType>
+    </xs:element>
+
+    
+    <!-- Each *country* element contains up to 3 *vehicle* elements,
+    one for each type sold in that country. 
+    The country itself is identified through its *name* attribute. -->
+    <xs:element name="country">        
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vehicle" maxOccurs="3"/>        
+            </xs:sequence>
+            <xs:attribute name="name" type="Tcountry"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Each *vehicle* element contains a single *car_sold* element,
+    containing the sales figure for that type of vehicle, in that
+    country, for that quarter of the specified year. -->
+    <xs:element name="vehicle">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="car_sold"/>        
+            </xs:sequence>
+            <xs:attribute name="type" type="Tvehicle"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Each *car_sold* element contains the sales data, explained above. -->
+    <xs:element name="car_sold" type="xs:integer"/>
+
+</xs:schema>
